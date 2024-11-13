@@ -38,4 +38,3 @@ jobs:
           docker stop docker_container || true
           docker rm docker_container || true
           docker run -d -p 8099:8099 --name docker_container jed1rey/trabalho_docker:latest
-
