@@ -33,7 +33,6 @@ jobs:
         host: 201.23.3.86
         username: aluno
         key: ${{ secrets.SSH_PRIVATE_KEY }}
-        port: 22
         script: |
           docker pull jed1rey/trabalho_docker:latest
           docker stop docker_container || true
