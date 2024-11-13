@@ -7,6 +7,7 @@ on:
   pull_request:
     branches:
       - main
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -21,10 +22,21 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
 
-    - name: Build Docker Image
+    - name: Build and Push Docker Image
       run: |
-        docker build -t jed1rey/minha-aplicacao:latest .
+        docker build -t jed1rey/trabalho_docker:latest .
+        docker push jed1rey/trabalho_docker:latest
 
-    - name: Push Docker Image to Docker Hub
-      run: |
-        docker push jed1rey/minha-aplicacao:latest
+    - name: Deploy to Server
+      uses: appleboy/ssh-action@v0.1.5
+      with:
+        host: 201.23.3.86
+        username: aluno
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        port: 22
+        script: |
+          docker pull jed1rey/trabalho_docker:latest
+          docker stop docker_container || true
+          docker rm docker_container || true
+          docker run -d -p 8099:8099 --name docker_container jed1rey/trabalho_docker:latest
+
