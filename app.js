@@ -22,7 +22,7 @@ const frases = [
     "No final, não somos medidos por nossa força, mas por nossas escolhas.",
     "A esperança é como o fogo. Enquanto houver uma centelha, ele jamais morre.",
     "O mundo está mudando... posso senti-lo na água, no ar e na terra.",
-    "Todo grande feito começa com uma pequena ação.",
+    "Todo grande feito começa com a pequena ação.",
     "Nem mesmo o mais sábio pode prever todos os fins.",
     "A verdadeira sabedoria está em reconhecer que sempre há algo a aprender.",
     "Não devemos temer as trevas, mas sim não ter coragem de enfrentar o que está por vir.",
