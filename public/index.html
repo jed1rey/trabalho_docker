@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>O Que Gandalf diria</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Conselho diário do Mago Cinza</h1>
+        <img src="imagem.jpg" alt="Imagem do Senhor dos Anéis" style="width: 300px; margin-bottom: 20px;">
+
+        <div class="content">
+            <button class="btn" onclick="pegarFrase()">Obter Sabedoria</button>
+            <p id="frase" class="frase"></p>
+        </div>
+    </div>
+
+    <script>
+        async function pegarFrase() {
+            const resposta = await fetch('/frase');
+            const data = await resposta.json();
+            document.getElementById('frase').innerText = data.frase;
+        }
+    </script>
+</body>
+</html>

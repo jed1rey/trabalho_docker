@@ -1,0 +1,11 @@
+npm init -y
+npm install express
+node app.js
+
+
+git init
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git remote add origin https://github.com/seu-usuario/minha-aplicacao.git
+git push -u origin main
